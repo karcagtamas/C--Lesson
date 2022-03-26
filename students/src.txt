@@ -1,0 +1,5 @@
+﻿Id;Name;BirthYear;Boy;Color
+sadfsadf;Kis Pista;2000;1;Red
+randomkulcs;Kun Bela;1989;1;Green
+azonosito;Nagy Reka;2002;0;Blue
+sadd12f-sdfd123hd23h;Kovats Sara;1996;0;Red
