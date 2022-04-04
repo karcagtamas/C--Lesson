@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
 var list = new List<Feladvany>();
@@ -45,3 +45,48 @@ feladvany.Kirajzol();
 
 // 8. feladat
 File.WriteAllLines($"sudoku{x}.txt", xlist.Select(f => f.Kezdo).ToList());
+
+class Feladvany
+{
+    public string Kezdo { get; private set; }
+    public int Meret { get; private set; }
+
+    public Feladvany(string sor)
+    {
+        Kezdo = sor;
+        Meret = Convert.ToInt32(Math.Sqrt(sor.Length));
+    }
+
+    public void Kirajzol()
+    {
+        for (int i = 0; i < Kezdo.Length; i++)
+        {
+            if (Kezdo[i] == '0')
+            {
+                Console.Write(".");
+            }
+            else
+            {
+                Console.Write(Kezdo[i]);
+            }
+            if (i % Meret == Meret - 1)
+            {
+                Console.WriteLine();
+            }
+        }
+    }
+
+    public double FillStatus()
+    {
+        int c = 0;
+        foreach (var i in Kezdo)
+        {
+            if (i != '0')
+            {
+                c++;
+            }
+        }
+
+        return (double)c / Kezdo.Length;
+    }
+}
